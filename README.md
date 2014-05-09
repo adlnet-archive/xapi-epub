@@ -17,6 +17,11 @@ While it's possible to integrate communication to a [Learning Record Store (LRS)
 Ideally, supporting communication to an LRS at the client (reader) level is preferred, this is still undergoing investigation.
 
 
+##### Security Concerns
+
+Without an LRS proxy, the credentials for an LRS user would be included in the epub. Push to move towards oauth, oauth 2, or a proxy to the LRS.  The LRS still needs to implement protection against theoretical attacks.
+
+
 ##### Additional caveats to be aware of
 
 - Apple "requires" a .plist file for metadata read by iBooks, which is outside the specification
