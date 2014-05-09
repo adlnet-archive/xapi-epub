@@ -26,7 +26,7 @@ Ideally, supporting communication to an LRS at the client (reader) level is pref
 
 
 ##### Tools
-- This [epub validator](http://validator.idpf.org/) will give a sense of how well your book validates against the spec
+- This [epub validator](http://validator.idpf.org/) will give a sense of how well a book validates against the spec
 
 
 ### The Future
