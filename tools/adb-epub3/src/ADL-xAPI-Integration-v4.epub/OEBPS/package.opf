@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package 
+	xmlns="http://www.idpf.org/2007/opf"
+	prefix="rendition: http://www.idpf.org/vocab/rendition/#"
+	version="3.0" xml:lang="en"
+	unique-identifier="uid" >
+
+
+<!-- METADATA	(?) http://idpf.org/epub/30/spec/epub30-publications.html#sec-metadata-elem -->
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">	<!--  -->
+		
+		<!-- About the Book -->
+		<dc:title id="en_title" xml:lang="en">ADL xAPI Integration v4</dc:title>		
+		<dc:description id="en_description" xml:lang="en">An example EPUB3 book with basic xAPI integration</dc:description>
+		
+		<!-- Contributors -->
+		<dc:creator id="creator">Tyler Mulligan</dc:creator>	<!-- (?) http://idpf.org/epub/30/spec/epub30-publications.html#sec-opf-dccreator -->
+		<meta refines="#creator" property="file-as">Mulligan, Tyler</meta>
+		<meta refines="#creator" property="role" scheme="marc:relators">aut</meta>
+		
+		<!-- Publication -->
+		<dc:publisher id="en_publisher" xml:lang="en">Tyler Mulligan</dc:publisher>
+		<dc:date>2014-03-24</dc:date>
+		<dc:language>en</dc:language>
+		
+		<meta property="dcterms:modified">2014-03-24T23:59:59Z</meta> <!-- I think this helps with updates, basically -->
+		
+		<!-- Unique ID, e.g. ISBN, or generate a UUID here: http://www.itu.int/ITU-T/asn1/uuid.html -->
+		<dc:identifier id="uid">MUST_BE_UNIQUE_ADLxAPIv4</dc:identifier>
+		
+		
+		<!-- License -->
+		<dc:rights id="en_rights" xml:lang="en">This work is licensed under a Creative Commons Attribution-ShareAlike (CC BY-SA) 3.0 Unported License.</dc:rights>
+
+		<!-- Cover Image -->
+		<meta name="cover" content="coverimage" />
+		
+		<!-- ePUB 3.0 Renditions and Media Overlays -->
+		<meta property="rendition:layout">pre-paginated</meta>	<!-- (?) http://idpf.org/epub/fxl/#property-defs -->
+		<meta property="rendition:layout">landscape</meta>
+		<meta property="rendition:spread">landscape</meta>
+
+	</metadata>
+	
+	
+<!-- MANIFEST	(?) http://idpf.org/epub/30/spec/epub30-publications.html#sec-manifest-elem -->		
+	<manifest>
+	
+		<!-- Table of Contents -->
+		<item id="toc" href="toc.xhtml" properties="nav" media-type="application/xhtml+xml"/>
+		    
+		<!-- CSS -->
+		<item id="css0" href="css/style.css" media-type="text/css"/>
+		<item id="css1" href="css/annotator.min.css" media-type="text/css"/>
+
+		<!-- JS -->
+		<item id="js0" href="js/config.js" media-type="text/javascript"/>
+		<item id="js1" href="js/base64.js" media-type="text/javascript"/>
+		<item id="js2" href="js/verbs.js" media-type="text/javascript"/>
+		<item id="js3" href="js/xapiwrapper.js" media-type="text/javascript"/>
+		<item id="js4" href="js/h5utils.js" media-type="text/javascript"/>
+		<item id="js5" href="js/jquery.min.js" media-type="text/javascript"/>
+		<item id="js6" href="js/annotator-full.min.js" media-type="text/javascript"/>
+		<item id="js7" href="js/annotator.offline.min.js" media-type="text/javascript"/>
+		<item id="js8" href="js/popcorn-complete.min.js" media-type="text/javascript"/>
+		<item id="js9" href="js/xapipopcorn.js" media-type="text/javascript"/>
+	
+		<!-- xHTML -->
+		<item id="cover" properties="scripted" media-type="application/xhtml+xml" href="cover.xhtml"/>
+		<item id="p01" properties="scripted" media-type="application/xhtml+xml" href="p01.xhtml"/>
+		<item id="p02" properties="scripted" media-type="application/xhtml+xml" href="p02.xhtml"/>
+		<item id="p03" properties="scripted" media-type="application/xhtml+xml" href="p03.xhtml"/>
+		<item id="p04" properties="scripted" media-type="application/xhtml+xml" href="p04.xhtml"/>
+		<item id="p05" properties="scripted" media-type="application/xhtml+xml" href="p05.xhtml"/>
+	
+		<!-- Images -->
+		<item id="coverimage" href="images/book_cover.jpg" media-type="image/jpeg"/>
+		
+        <!-- Videos -->
+        <item id="vid1" href="videos/catbox.mp4" media-type="video/quicktime"/>
+        
+		<!--iTunes-->
+		<item id="itunesmeta" href="../iTunesMetadata.plist" media-type="application/xml"/> <!-- A lot of people moan about this, get over it, just declare it -->
+		
+	</manifest>
+
+	
+<!-- SPINE (?) http://idpf.org/epub/30/spec/epub30-publications.html#sec-spine-elem -->	
+	<spine page-progression-direction="ltr">
+		<itemref idref="cover"/>
+		<itemref idref="p01" linear="yes"/>
+		<itemref idref="p02" linear="yes"/>
+		<itemref idref="p03" linear="yes"/>
+		<itemref idref="p04" linear="yes"/>
+		<itemref idref="p05" linear="yes"/>
+	</spine>
+
+</package>

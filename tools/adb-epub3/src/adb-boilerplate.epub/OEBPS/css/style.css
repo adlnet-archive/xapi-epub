@@ -1,0 +1,38 @@
+html,body,div,img,p,a,ul,li { margin:0;padding:0; } /* this is not an exhaustive browser reset */
+body {
+	width: 760px; 
+	height: 1000px;				/* sets up the page */
+	position: relative;
+	font-family: Georgia, Times, serif;
+	font-size: 40px;
+	line-height: 1.5em;
+	color: #333;	}
+
+img {
+	z-index:-1;						/* send to back */
+	width: 760px;
+	height: 1000px;				/* ensure full bleed images match page */
+	position: absolute;
+	top: 0;
+	left: 0; }						/* stick it in the top corner */
+
+a { text-decoration: none; border-bottom: 1px solid #ccc; color: #48d; }
+
+.-epub-media-overlay-active { /* for Read Aloud text highlighting, style as you wish */ 
+	border-bottom: 4px solid #48d;
+	color: #333; }
+
+/**** The Book ****/
+
+section.text, section.license {
+	position:absolute;
+	
+	top: 4em;
+	left: 2em;
+	width: 15em; }
+
+section.license {width: 11.5em;}
+section.license p {font-size: 0.45em; line-height: 1.8em; margin-bottom: 1em;}
+section.text p {margin-bottom: 1em;}
+section.text h4 {margin-bottom: 0.2em;}
+section.text ul {margin: 0.5em 1em;}

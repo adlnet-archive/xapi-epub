@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Page 02</title>
+	<link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <!-- Include the xapiwrapper.js and dependent scripts -->
+    <script src="js/h5utils.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/verbs.js"></script>
+    <script src="js/xapiwrapper.js"></script>
+    <script src="js/annotator-full.min.js"></script>
+    <script src="js/annotator.offline.min.js"></script>
+    <link href="css/annotator.min.css" type="text/css" rel="stylesheet"/>
+    <script>
+    jQuery(function ($) {
+        $('body').annotator().annotator('addPlugin', 'Offline');
+    });
+    </script>
+</head>
+<body>
+    <div class="p02 right">
+        <section class="text">
+            <p>By now, this book should have sent statements to the LRS.</p>
+            <p>Try highlighting some text on this page, it includes annotatorjs.</p>
+            <p>You should be able to verify this by logging into the <a href="https://lrs.adlnet.gov/xAPI/">ADL LRS</a> using the following credentials:</p>
+            <p><strong>ebook / ebooklrs</strong></p>
+        </section>
+    </div>
+    <script>
+    // Update the config to use the credentials of your LRS 
+    ADL.XAPIWrapper.changeConfig(Config);
+    var email = getStorage('session');
+
+    // Build Statement
+    var stmt = { 
+        "actor": { "mbox": "mailto:" + email },
+        "verb": ADL.verbs.experienced,
+        "object": {
+            "id": "http://ebooks.adlnet.gov/xapi-integration/page-2/experienced",
+            "definition": {
+                "name": { "en-US": "Page 2" }
+            }
+        }
+    };
+    // Send Statement
+    ADL.XAPIWrapper.sendStatement(stmt, function(resp, obj) {
+        // Callback action
+        //alert(obj.id);
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Page 05</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <!-- Include the xapiwrapper.js and dependent scripts -->
+    <script src="js/h5utils.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/verbs.js"></script>
+    <script src="js/xapiwrapper.js"></script>
+</head>
+<body>
+    <div class="p05 left">
+    	<section class="text">
+            <h1>The End</h1>
+            <p>Some readers (Calibre for example) will show a javascript alert with the <em>statement's id</em> right now.</p>
+    		<p>Thanks for reading!</p>
+	  	</section>
+    </div>
+    <script>
+    // Update the config to use the credentials of your LRS 
+    ADL.XAPIWrapper.changeConfig(Config);
+    var email = getStorage('session');
+
+    // Build Statement
+    var stmt = { 
+        "actor": { "mbox": "mailto:" + email },
+        "verb": ADL.verbs.experienced,
+        "object": {
+            "id": "http://ebooks.adlnet.gov/xapi-integration/page-5/experienced",
+            "definition": {
+                "name": { "en-US": "Page 5" }
+            }
+        }
+    };
+    // Send Statement
+    ADL.XAPIWrapper.sendStatement(stmt, function(resp, obj) {
+        // Callback action
+        //alert(obj.id);
+    });
+
+    // Build Statement
+    var stmt = { 
+        "actor": { "mbox": "mailto:" + email },
+        "verb": ADL.verbs.completed,
+        "object": {
+            "id": "http://adlnet.gov/expapi/verbs/completed",
+            "definition": {
+                "name": { "en-US": "the ADL xAPI Integration EPUB3 book" }
+            }
+        }
+    };
+    // Send Statement
+    ADL.XAPIWrapper.sendStatement(stmt, function(resp, obj) {
+        // Callback action
+        alert(obj.id);
+    });
+    </script>
+</body>
+</html>
