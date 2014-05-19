@@ -31,8 +31,9 @@ Without an LRS proxy, the credentials for an LRS user would be included in the e
 
 
 ##### Tools
-- This [epub validator](http://validator.idpf.org/) will give a sense of how well a book validates against the spec
 
+- This [epub validator](http://validator.idpf.org/) will give a sense of how well a book validates against the spec
+- Check the tools folder (warning, generated books are not production ready)
 
 ### The Future
 
