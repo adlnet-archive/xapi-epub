@@ -8,3 +8,10 @@ The bash script requires a GUN/Linux based operating system such as Ubuntu. It w
 A build is included if your convenience. You can open this file with your archive manager to have a look at what gets built.
 
 It's not advised that you publish a book using this template as it will not yet gracefully degrade in readers that do not support javascript. Another project has been started to address this issue.
+
+
+**PLEASE DO NOT DISTRIBUTE BOOKS GENERATED WITH THIS SCRIPT**
+
+This script is helpful for quickly making changes and generating epubs but these books do not yet gracefully degrade and the best practices outlined in the README.md of the root of this repository are not in full effect.
+
+Do study the code and the skeleton of the epub format. File issues if you have questions or suggestions.
