@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>artistName</key>
+	<string>Tyler Mulligan</string>
+	<key>book-info</key>
+	<dict>
+		<key>cover-image-path</key>
+		<string>OEBPS/images/book_cover.jpg</string>
+		<key>mime-type</key>
+		<string>application/epub+zip</string>
+	</dict>
+	<key>itemName</key>
+	<string>ADL xAPI Integration</string>
+	<key>playlistName</key>
+	<string>ADL xAPI Integration</string>
+	<key>sort-artist</key>
+	<string>Mulligan, Tyler</string>
+	<key>genre</key>
+	<string>Demonstration</string>
+</dict>
+</plist>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package 
+	xmlns="http://www.idpf.org/2007/opf"
+	prefix="rendition: http://www.idpf.org/vocab/rendition/#"
+	version="3.0" xml:lang="en"
+	unique-identifier="uid" >
+
+
+<!-- METADATA	(?) http://idpf.org/epub/30/spec/epub30-publications.html#sec-metadata-elem -->
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">	<!--  -->
+		
+		<!-- About the Book -->
+		<dc:title id="en_title" xml:lang="en">{{BOOK_TITLE}}</dc:title>		
+		<dc:description id="en_description" xml:lang="en">{{BOOK_DESCRIPTION}}</dc:description>
+		
+		<!-- Contributors -->
+		<dc:creator id="creator">{{AUTHOR_NAME}}</dc:creator>	<!-- (?) http://idpf.org/epub/30/spec/epub30-publications.html#sec-opf-dccreator -->
+		<meta refines="#creator" property="file-as">{{AUTHOR_LAST_NAME}}, {{AUTHOR_FIRST_NAME}}</meta>
+		<meta refines="#creator" property="role" scheme="marc:relators">aut</meta>
+		
+		<!-- Publication -->
+		<dc:publisher id="en_publisher" xml:lang="en">{{AUTHOR_NAME}}</dc:publisher>
+		<dc:date>{{DATE_F}}</dc:date>
+		<dc:language>en</dc:language>
+		
+		<meta property="dcterms:modified">{{DATE_UTC}}</meta> <!-- I think this helps with updates, basically ( http://www.w3.org/TR/NOTE-datetime ) -->
+		
+		<!-- Unique ID, e.g. ISBN, or generate a UUID here: http://www.itu.int/ITU-T/asn1/uuid.html -->
+		<dc:identifier id="uid">{{BOOK_UID}}</dc:identifier>
+		
+		
+		<!-- License -->
+		<dc:rights id="en_rights" xml:lang="en">This work is licensed under a Creative Commons Attribution-ShareAlike (CC BY-SA) 3.0 Unported License.</dc:rights>
+
+		<!-- Cover Image -->
+		<meta name="cover" content="coverimage" />
+		
+		<!-- ePUB 3.0 Renditions and Media Overlays -->
+		<meta property="rendition:layout">pre-paginated</meta>	<!-- (?) http://idpf.org/epub/fxl/#property-defs -->
+		<meta property="rendition:layout">landscape</meta>
+		<meta property="rendition:spread">landscape</meta>
+
+	</metadata>
+	
+	
+<!-- MANIFEST	(?) http://idpf.org/epub/30/spec/epub30-publications.html#sec-manifest-elem -->		
+	<manifest>
+	
+		<!-- Table of Contents -->
+		<item id="toc" href="toc.xhtml" properties="nav" media-type="application/xhtml+xml"/>
+		    
+		<!-- CSS -->
+		<item id="css0" href="css/style.css" media-type="text/css"/>
+
+		<!-- JS -->
+		<item id="js0" href="js/config.js" media-type="text/javascript"/>
+		<item id="js1" href="js/h5utils.js" media-type="text/javascript"/>
+		<item id="js2" href="js/xapiwrapper.min.js" media-type="text/javascript"/>
+	
+		<!-- xHTML -->
+		<item id="cover" properties="scripted" media-type="application/xhtml+xml" href="cover.xhtml"/>
+		<item id="p01" properties="scripted" media-type="application/xhtml+xml" href="p01.xhtml"/>
+		<item id="p02" properties="scripted" media-type="application/xhtml+xml" href="p02.xhtml"/>
+		<item id="p03" properties="scripted" media-type="application/xhtml+xml" href="p03.xhtml"/>
+		<item id="p04" properties="scripted" media-type="application/xhtml+xml" href="p04.xhtml"/>
+		<item id="p05" properties="scripted" media-type="application/xhtml+xml" href="p05.xhtml"/>
+	
+		<!-- Images -->
+		<item id="coverimage" href="images/book_cover.jpg" media-type="image/jpeg"/>
+		<item id="img01" href="images/img_p01.jpg" media-type="image/jpeg"/>
+		<item id="img02" href="images/img_p02.jpg" media-type="image/jpeg"/>
+		<item id="img03" href="images/img_p03.jpg" media-type="image/jpeg"/>
+		<item id="img04" href="images/img_p04.jpg" media-type="image/jpeg"/>
+		<item id="img05" href="images/img_p05.jpg" media-type="image/jpeg"/>
+        
+		<!--iTunes-->
+		<item id="itunesmeta" href="../iTunesMetadata.plist" media-type="application/xml"/> <!-- A lot of people moan about this, get over it, just declare it -->
+		
+	</manifest>
+
+	
+<!-- SPINE (?) http://idpf.org/epub/30/spec/epub30-publications.html#sec-spine-elem -->	
+	<spine page-progression-direction="ltr">
+		<itemref idref="cover"/>
+		<itemref idref="p01" linear="yes"/>
+		<itemref idref="p02" linear="yes"/>
+		<itemref idref="p03" linear="yes"/>
+		<itemref idref="p04" linear="yes"/>
+		<itemref idref="p05" linear="yes"/>
+	</spine>
+
+</package>
