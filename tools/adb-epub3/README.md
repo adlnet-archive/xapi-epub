@@ -9,9 +9,32 @@ A build is included if your convenience. You can open this file with your archiv
 
 It's not advised that you publish a book using this template as it will not yet gracefully degrade in readers that do not support javascript. Another project has been started to address this issue.
 
-
 **PLEASE DO NOT DISTRIBUTE BOOKS GENERATED WITH THIS SCRIPT**
 
 This script is helpful for quickly making changes and generating epubs but these books do not yet gracefully degrade and the best practices outlined in the README.md of the root of this repository are not in full effect.
 
 Do study the code and the skeleton of the epub format. File issues if you have questions or suggestions.
+
+
+### Packaging Notes
+
+The mimetype file is used in the packaging process, then this file is removed from the archive.
+
+A single command to package and epub is as follows: 
+
+```zip -X file.epub mimetype && zip -r file.epub * -x "mimetype"```
+
+The script does that after running through sed based replacement of variables based on book.conf (which is a file that is also not intended to be included in the epub archive.
+
+Archiving the folder on OSX risks including other garbage files, __MACOSX folders, specifically.
+
+
+#### Anatomy of an EPUB package
+
+Refer to the latest .epub folder in the build folder. Open it with your archive manager to get an idea for the basic structure and required files.
+
+The src folder has additional files used in the generation process that are removed as noted above.
+
+*in progress*
+
+Details and a barebone example to come.
