@@ -27,3 +27,14 @@ A single command to package and epub is as follows:
 The script does that after running through sed based replacement of variables based on book.conf (which is a file that is also not intended to be included in the epub archive.
 
 Archiving the folder on OSX risks including other garbage files, __MACOSX folders, specifically.
+
+
+#### Anatomy of an EPUB package
+
+Refer to the latest .epub folder in the build folder. Open it with your archive manager to get an idea for the basic structure and required files.
+
+The src folder has additional files used in the generation process that are removed as noted above.
+
+*in progress*
+
+Details and a barebone example to come.
